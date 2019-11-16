@@ -23,11 +23,11 @@ namespace GOO.Net.Core.Caching
             services.AddMemoryCache();
             services.AddDistributedRedisCache(opt => {
                 opt.Configuration = "localhost:6379,password=x";
-                opt.InstanceName = "GOO.Net.Core.Caching.Master";
+                opt.InstanceName = "GOO.Net.Core.Caching";
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GOO Caching", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GOO.Net.Core.Caching", Version = "v1" });
             });
             services.AddSingleton<KafkaClient>();
             services.AddSingleton<KafkaFedMemoryCache>();
