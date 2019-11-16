@@ -1,0 +1,44 @@
+version: '2.1'
+
+networks:
+  goo_net_2:
+    external:
+      name: goo_net_2
+
+
+services: 
+  #db:
+  #  image: postgres:10.10
+  #  networks:
+  #   - goo_net_2
+  #  ports: 
+  #    - "5432:5432"
+    
+  redis:
+    image: redis
+    networks:
+     - goo_net_2
+    ports: 
+      - "6379:6379"
+
+  #kafka setup  
+  myzookeeper:
+    image: "confluentinc/cp-zookeeper"
+    environment:
+      - ZOOKEEPER_CLIENT_PORT=2181
+    networks:
+     - goo_net_2
+    ports:
+      - "2181:2181"
+ 
+  mykafka:
+    image: "confluentinc/cp-kafka"
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=myzookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_ZOOKEEPER_CONNECT_TIMEOUT_MS=60000
+    networks:
+     - goo_net_2
+    ports:
+      - "9092:9092"
