@@ -50,7 +50,7 @@ namespace GOO.Net.Core.Caching
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "GOO Caching V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "GOO.Net.Core.Caching V1");
             });
 
             app.UseRouting();
