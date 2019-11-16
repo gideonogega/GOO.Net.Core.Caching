@@ -18,10 +18,11 @@ There are numerous tutorials on how to run to .NET applications if you're new to
 - Open the solution file [GOO.Net.Core.Caching.sln](../src/GOO.Net.Core.Caching.sln) in Visual Studio
 - Run the project
 
-### Swagger
+### Swagger:
 
-When creating RESTful apis, swagger is one of the easiest tools that helps new develpers get started with your APIs.
+When creating RESTful apis, swagger is one of the easiest tools that helps new develpers get started with your APIs. Not going to go into the intricasies of using swagger, plenty of documentation can be found online. See [here](https://www.blazemeter.com/blog/getting-started-with-swagger-ui/) for examples and [here](https://swagger.io/tools/swagger-ui/) live demos.
 
+![alt text](pics/SwaggerEndpoints.png "Available Endpoints")
 
 
 
