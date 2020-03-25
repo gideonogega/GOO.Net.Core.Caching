@@ -10,7 +10,7 @@ using System.Threading;
 namespace GOO.Net.Core.Caching.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("caches")]
     public class CachesController : ControllerBase
     {
         private const int TEST_COUNT = 10;
